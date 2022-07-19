@@ -1,14 +1,9 @@
 import React from "react";
 import { Component } from "react";
 import Container from 'react-bootstrap/Container';
-import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 
 class DisplayData extends Component{
-constructor(props){
-    super(props);
-}
-
 
     render(){
 
