@@ -9,18 +9,17 @@ class DisplayData extends Component{
 
         return(
            <Container>
-            {this.props.list.map(data => (
-            <Card key={data.display_name} style={{ width: '30rem', textAlign: 'center',margin:'auto' }}>
+            <Card key={this.props.cityName} style={{ width: '30rem', textAlign: 'center',margin:'auto', boxShadow: 'rgba(0, 0, 0, 0.1) 0px 4px 12px'}}>
             <Card.Img variant="top" src={this.props.map}></Card.Img>
             <Card.Body>
-              <Card.Title>{data.display_name}</Card.Title>
+              <Card.Title>{this.props.cityName}</Card.Title>
               <Card.Text>
-                Latitude:{data.lat}<br></br>
-                Longitude:{data.lon}
+                Latitude:{this.props.lat}<br></br>
+                Longitude:{this.props.lon}
               </Card.Text>
             </Card.Body>
           </Card>
-          ))}
+          
           </Container>
 
         )
