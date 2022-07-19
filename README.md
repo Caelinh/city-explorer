@@ -14,15 +14,15 @@ This is an app created to show the user various data based on a global location 
 
 ## Change Log
 
-Name of feature: 
+Name of feature: City Search
 
-Estimate of time needed to complete: 
+Estimate of time needed to complete: 3hrs
 
-Start time: 
+Start time:7:00
 
-Finish time:
+Finish time: 11:50
 
-Actual time needed to complete:
+Actual time needed to complete: 5 hrs
 
 ## Credit and Collaborations
 <!-- Give credit (and a link) to other people or resources that helped you build this application. -->
