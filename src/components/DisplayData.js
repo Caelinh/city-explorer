@@ -9,7 +9,7 @@ class DisplayData extends Component{
 
         return(
            <Container>
-            <Card key={this.props.cityName} style={{ width: '30rem', textAlign: 'center',margin:'auto' }}>
+            <Card key={this.props.cityName} style={{ width: '30rem', textAlign: 'center',margin:'auto', boxShadow: 'rgba(0, 0, 0, 0.1) 0px 4px 12px'}}>
             <Card.Img variant="top" src={this.props.map}></Card.Img>
             <Card.Body>
               <Card.Title>{this.props.cityName}</Card.Title>
