@@ -4,6 +4,7 @@
 **Version**: 1.0.0
 
 ## Overview
+
 This is an app created to show the user various data based on a global location of their choice.
 
 ## Getting Started
