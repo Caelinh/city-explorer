@@ -27,3 +27,4 @@ Actual time needed to complete: 5 hrs
 
 ## Credit and Collaborations
 <!-- Give credit (and a link) to other people or resources that helped you build this application. -->
+![Lab Screenshot](https://user-images.githubusercontent.com/106052558/179849110-f876426e-afac-4aa0-ace5-09699f3d596d.png)
