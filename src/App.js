@@ -4,6 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Cities from './components/Cities';
 import Container from 'react-bootstrap/Container';
 import DisplayData from './components/DisplayData';
+import Button from 'react-bootstrap/Button'
 
 
 
@@ -17,7 +18,8 @@ class App extends Component {
       display_name: '',
       url: '',
       showResults: false,
-      searches: []
+      searches: [],
+      weatherResults: null
     }
     
     
@@ -36,7 +38,9 @@ class App extends Component {
     this.state.searches.push(cityData);
   }
  
-
+  collectWeather = (weatherData) =>{
+    this.setState({ weatherResults: weatherData})
+  }
  
  
   render() {
@@ -45,9 +49,10 @@ class App extends Component {
       <header className="App-header">
         <h1>City Explorer</h1>
       </header>
-      <Cities data={this.getData}></Cities>
+      <Cities data={this.getData} weather={this.collectWeather}></Cities>
       {this.state.showResults &&
-      <DisplayData id="results" list={this.state.searches} cityName={this.state.display_name} lat={this.state.latitude} lon={this.state.longitude} map={this.state.url}></DisplayData>}
+      <DisplayData id="results" list={this.state.searches} cityName={this.state.display_name} lat={this.state.latitude} lon={this.state.longitude} weather={this.state.weatherResults} map={this.state.url}></DisplayData>}
+      <Button style={{ margin: " 10px 10px 20px" }} variant='primary' onClick={this.handleWeather}>Weather</Button>
       </Container>
 
 

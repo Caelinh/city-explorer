@@ -25,16 +25,27 @@ class City extends Component {
 
     handleSubmit = (e) => {
         e.preventDefault();
+        
         if (this.state.query === '') {
             this.setState({ showAlert: true });
         } else this.setState({ showAlert: false });
+        
         let url = `https://us1.locationiq.com/v1/search?key=${process.env.REACT_APP_CITY_KEY}&q=${this.state.query}&format=json`;
         axios.get(url).then(response => {
+            
+            if(response){
+                this.gatherWeather(response.data[0].lat,response.data[0].lon)
+            }
             this.props.data(response.data[0])
         });
     }
-
-
+    gatherWeather = (lat,lon) => {
+    let url = `http://localhost:3001/weather?lat=${lat}&lon=${lon}&searchQuery=${this.state.query}`
+    axios.get(url).then(response => {
+        console.log(response);
+        this.props.weather(response.data);
+    })
+    }
     render() {
         return (
             <Container>
@@ -47,6 +58,7 @@ class City extends Component {
                             Please submit a city name.
                         </Alert>}
                     <Button style={{ margin: " 10px 10px 20px" }} variant='primary' type='Submit'>Explore!</Button>
+                    
                 </Form>
 
             </Container>

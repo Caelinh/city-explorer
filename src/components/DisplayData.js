@@ -15,7 +15,8 @@ class DisplayData extends Component{
               <Card.Title>{this.props.cityName}</Card.Title>
               <Card.Text>
                 Latitude:{this.props.lat}<br></br>
-                Longitude:{this.props.lon}
+                Longitude:{this.props.lon}<br></br>
+               
               </Card.Text>
             </Card.Body>
           </Card>
