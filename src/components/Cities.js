@@ -42,10 +42,11 @@ class City extends Component {
     gatherWeather = (lat,lon) => {
     let url = `http://localhost:3001/weather?lat=${lat}&lon=${lon}&searchQuery=${this.state.query}`
     axios.get(url).then(response => {
-        console.log(response);
         this.props.weather(response.data);
     })
     }
+    
+    
     render() {
         return (
             <Container>

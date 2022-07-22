@@ -5,20 +5,23 @@ import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import Alert from 'react-bootstrap/Alert'
+import { Card } from "react-bootstrap";
 
-// class Weather extends Component {
-//     constructor() {
-//         super(){
-
-//         }
-//     }
+class Weather extends Component {
 
 
-// render() {
-//     return(
 
-//     )
-// }
+    render() {
+        console.log(this.props.weatherData[0].date)
+        return (
+            <Container>
+                <Card style={{textAlign:'Center', width:'20rem', margin: 'auto'}}>
+                <Card.Text>{this.props.weatherData}</Card.Text>
+                <Card.Text>{this.props.weatherDescription}</Card.Text>
+                </Card>
+            </Container>
+        )
+    }
 
 
 
