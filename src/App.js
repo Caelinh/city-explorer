@@ -4,8 +4,10 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Cities from './components/Cities';
 import Container from 'react-bootstrap/Container';
 import DisplayData from './components/DisplayData';
-import Button from 'react-bootstrap/Button'
 import Weather from './components/Weather';
+import Movies from './components/Movies'; 
+import Row from 'react-bootstrap/Row'
+import { Col } from 'react-bootstrap';
 
 
 class App extends Component {
@@ -19,7 +21,8 @@ class App extends Component {
       url: '',
       showResults: false,
       searches: [],
-      weatherResults: []
+      weatherResults: [],
+      movieResults: []
     }
 
 
@@ -39,22 +42,33 @@ class App extends Component {
   }
 
   collectWeather = (weatherData) => {
-    this.setState({ weatherResults: weatherData })
+    const weatherForecast = weatherData.slice(0,5);
+    this.setState({ weatherResults: weatherForecast })
   }
 
+  collectMovie = (movieData) => {
+    const topFive = movieData.slice(0,5);
+    this.setState({movieResults: topFive})
+  }
 
   render() {
-    console.log(this.state.weatherResults)
     return (
       <Container>
         <header className="App-header">
           <h1>City Explorer</h1>
         </header>
-        <Cities data={this.getData} weather={this.collectWeather}></Cities>
+        
+        <Cities data={this.getData} weather={this.collectWeather} collectMovie={this.collectMovie} ></Cities>
         {this.state.showResults &&
           <DisplayData id="results" list={this.state.searches} cityName={this.state.display_name} lat={this.state.latitude} lon={this.state.longitude} weather={this.state.weatherResults} map={this.state.url}></DisplayData>}
-
-        {this.state.weatherResults.map(e => <Weather key={e.date} weatherData={e.date} weatherDescription={e.description}></Weather>)}
+          <h2 id="weather">5 Day Forecast</h2>
+        <Row>
+        {this.state.weatherResults.map(e => <Col key={e.display_name} sm><Weather key={e.date} weatherData={e.date} weatherDescription={e.description} icon={e.icon}></Weather></Col>)}
+        </Row>
+        <h2 id="movies">Movies About The City</h2>
+        <Row>
+        {this.state.movieResults.map(e=> <Movies key={e.id} title={e.title} releaseDate={e.releaseDate} overview={e.overview} poster={`https://www.themoviedb.org/t/p/original/${e.poster}`} ></Movies>)}
+        </Row>
       </Container>
 
 
