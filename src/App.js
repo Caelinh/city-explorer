@@ -67,7 +67,7 @@ class App extends Component {
         </Row>
         <h2 id="movies">Movies About The City</h2>
         <Row>
-        {this.state.movieResults.map(e=> <Movies key={e.id} title={e.title} releaseDate={e.releaseDate} overview={e.overview} poster={`https://www.themoviedb.org/t/p/original/${e.poster}`} ></Movies>)}
+        {this.state.movieResults.map(e=> <Movies key={e.poster} title={e.title} releaseDate={e.releaseDate} overview={e.overview} poster={`https://www.themoviedb.org/t/p/original/${e.poster}`} ></Movies>)}
         </Row>
       </Container>
 
