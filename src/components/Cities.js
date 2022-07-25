@@ -41,19 +41,19 @@ class City extends Component {
         });
     }
     gatherWeather = (lat, lon) => {
-        let url = `http://localhost:3001/weather?lat=${lat}&lon=${lon}&searchQuery=${this.state.query}`
+        let url = `https://city-explorer-02.herokuapp.com/weather?lat=${lat}&lon=${lon}&searchQuery=${this.state.query}`
         axios.get(url).then(response => {
             this.props.weather(response.data);
         })
     }
     gatherMovie = () => {
-        let url = `http://localhost:3001/movies?searchQuery=${this.state.query}`
+        let url = `https://city-explorer-02.herokuapp.com/movies?searchQuery=${this.state.query}`
         axios.get(url).then(response => {
             this.props.collectMovie(response.data);
         })
     }
 
-
+//http://localhost:3001
 
 
 
