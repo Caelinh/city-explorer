@@ -1,23 +1,20 @@
 import React from "react";
 import { Component } from "react";
-import axios from "axios";
 import Container from 'react-bootstrap/Container';
-import Form from 'react-bootstrap/Form';
-import Button from 'react-bootstrap/Button';
-import Alert from 'react-bootstrap/Alert'
-import { Card } from "react-bootstrap";
+import  Card  from "react-bootstrap/Card";
 
 class Weather extends Component {
 
 
 
     render() {
-        console.log(this.props.weatherData[0].date)
         return (
             <Container>
-                <Card style={{textAlign:'Center', width:'20rem', margin: 'auto'}}>
+                <Card bg='primary' text='white' style={{textAlign:'Center', width:'20rem', margin: '20px auto', boxShadow: 'rgba(0, 0, 0, 0.35) 0px 5px 15px'}}>
+                <Card.Body>
                 <Card.Text>{this.props.weatherData}</Card.Text>
                 <Card.Text>{this.props.weatherDescription}</Card.Text>
+                </Card.Body>
                 </Card>
             </Container>
         )
