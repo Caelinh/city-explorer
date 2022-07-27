@@ -63,11 +63,11 @@ class App extends Component {
           <DisplayData id="results" list={this.state.searches} cityName={this.state.display_name} lat={this.state.latitude} lon={this.state.longitude} weather={this.state.weatherResults} map={this.state.url}></DisplayData>}
           <h2 id="weather">5 Day Forecast</h2>
         <Row>
-        {this.state.weatherResults.map(e => <Col key={e.display_name} sm><Weather key={e.date} weatherData={e.date} weatherDescription={e.description} icon={e.icon}></Weather></Col>)}
+        {this.state.weatherResults.map(e => <Col key={e.description} sm><Weather key={e.date} nestResults={e} ></Weather></Col>)}
         </Row>
         <h2 id="movies">Movies About The City</h2>
         <Row>
-        {this.state.movieResults.map(e=> <Movies key={e.poster} title={e.title} releaseDate={e.releaseDate} overview={e.overview} poster={`https://www.themoviedb.org/t/p/original/${e.poster}`} ></Movies>)}
+        {this.state.movieResults.map(e=> <Movies key={e.title} nestResults={e} poster={`https://www.themoviedb.org/t/p/original/${e.poster}`} ></Movies>)}
         </Row>
       </Container>
 
