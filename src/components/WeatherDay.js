@@ -11,8 +11,8 @@ class WeatherDay extends Component {
         return (
             <Container>
                 <ListGroup>
-                    <ListGroup.Item>{this.props.results.date}</ListGroup.Item>
-                    <ListGroup.Item>{this.props.results.description}</ListGroup.Item>
+                    <ListGroup.Item>{this.props.date}</ListGroup.Item>
+                    <ListGroup.Item>{this.props.description}</ListGroup.Item>
                 </ListGroup>
             </Container>
         )
